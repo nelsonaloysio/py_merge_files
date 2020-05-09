@@ -61,7 +61,7 @@ def merge_files(input_name, output_name=None,
 
     if int_total > 0:
         with open(output_name, 'wb') as wfd:
-            for f in file_list:
+            for f in sorted(file_list):
                 print('%s/%s: %s...' % (file_list.index(f)+1, str(int_total), f))
                 with open(f, 'rb') as fd:
                     copyfileobj(fd, wfd, 1024*1024*buffer_length)
